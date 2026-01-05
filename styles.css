@@ -115,19 +115,27 @@ nav > a:hover {
 .homepage footer {
   background-color: #0e151f;
 }
-
+.library {
+  display: flex;
+  flex-wrap: wrap;
+}
 .game {
+  flex: 33.33%;
   background-color: #000526;
   padding: 1%;
   margin: 1%;
   display: flex;
-  width: 30%;
   flex-direction: row;
+  text-wrap: wrap;
 }
 
 .game img {
   display: block;
-  width: 30%;
+  align-self: center;
+  justify-self: center;
+  margin: 0.5%;
+  height: auto;
+  width: 90%;
 }
 
 .button {

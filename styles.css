@@ -57,8 +57,8 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 9px;
+  margin-right: 9px;
 }
 
 .banner > img, .banner1 > img, .banner3 > img{
@@ -69,13 +69,17 @@ header {
 
 .banner2 > img, .banner4 > img, .banner5 > img, .banner6 > img {
   width: auto;
-  height: 150px;
+  height: 10vw;
 }
 
 .banner > h1, .banner1 > h1, .banner3 > h1 {
   margin-left: 8px;
   margin-right: 8px;
-  font-size: 2em;
+  font-size: 2vw;
+}
+
+.banner h1, .banner1 h1, .banner2 h1, .banner3 h1, .banner4 h1, .banner5 h1, .banner6 h1 {
+  font-size: 2vw;
 }
 
 nav {
@@ -87,7 +91,6 @@ nav {
 
 nav a {
   text-align: center;
-  
   margin-left: 5px;
   margin-right: 5px;
   color: #c5c3c0;
@@ -103,6 +106,9 @@ nav > a:hover {
 .active {
   color: #1a9fff;
   text-decoration: underline;
+}
+main {
+  margin-bottom: 15%;
 }
 
 /*HOMEPAGE*/
@@ -124,18 +130,26 @@ nav > a:hover {
   background-color: #000526;
   padding: 1%;
   margin: 1%;
+  padding-bottom: 2%;
   display: flex;
   flex-direction: row;
   text-wrap: wrap;
 }
+.game div p {
+  min-width: 250px;
+}
+.game div {
+  flex: 50%;
+}
 
-.game img {
+.game div img {
   display: block;
   align-self: center;
   justify-self: center;
   margin: 0.5%;
   height: auto;
-  width: 90%;
+  min-width: 250px;
+  width: 100%;
 }
 
 .button {
@@ -464,4 +478,16 @@ nav > a:hover {
     100% {
       transform: rotate(0deg);
     }
+}
+
+@media screen and (max-width: 800px) {
+  .game {
+    flex-direction: column;
+  }
+  .container {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: column;
+  }
 }

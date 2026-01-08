@@ -39,6 +39,7 @@ footer {
 }
 
 footer nav {
+  color: #fdfdfd;
   display: flex;
   justify-content: space-around;
 }

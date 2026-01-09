@@ -104,6 +104,41 @@ nav > a:hover {
   font-size: 1.5em;
 }
 
+#myLinks {
+  display: none;
+  flex-direction: column;
+}
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.mobileNav > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.mobileNav a {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #c5c3c0;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+#myLinks > a:hover {
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+#myLinks > .active {
+  color: #1a9fff;
+  text-decoration: underline;
+}
 .active {
   color: #1a9fff;
   text-decoration: underline;
@@ -169,7 +204,7 @@ main {
 
 /*ARMA*/
 
-.arma h1, .arma p, .arma a{
+.arma h1, .arma p, .arma a, .arma h2{
   color: #fdfdfd;
   font-family: "Keania One", sans-serif;
   font-weight: 400;
@@ -220,6 +255,10 @@ main {
   color: #dda44e;
   text-decoration: underline;
 }
+.arma header .mobileNav #myLinks .active {
+  color: #dda44e;
+  text-decoration: underline;
+}
 
 /*BF6*/
 .bf6 {
@@ -229,13 +268,17 @@ main {
 .bf6 footer, .bf6 header {
   background-color: #220000;
 }
-.bf6 h1, .bf6 p, .bf6 a{
+.bf6 h1, .bf6 p, .bf6 a, .bf6 h2{
   color: #fdfdfd;
   font-family: "Keania One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 .bf6 header nav .active {
+  color: #da0000;
+  text-decoration: underline;
+}
+.bf6 header .mobileNav #myLinks .active {
   color: #da0000;
   text-decoration: underline;
 }
@@ -268,13 +311,25 @@ main {
   color: #dda44e;
   text-decoration: underline;
 }
+.ats header .mobileNav #myLinks .active {
+  color: #dda44e;
+  text-decoration: underline;
+}
 /*MORDHAU*/
-.mordhau h1, .mordhau p, .mordhau a :not(.active){
+.mordhau h1, .mordhau p, .mordhau a :not(.active, .hamburger), .mordhau h2{
   color: transparent; 
   background: linear-gradient(45deg, #777 5%, #fff 10%, #ccc 30%, #ddd 50%, #ccc 70%, #fff 80%, #777 95%);
   background-clip: text;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-family: "UnifrakturCook", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+.mordhau .hamburger{
+  color: transparent; 
+  background: linear-gradient(45deg, #777 5%, #fff 10%, #ccc 30%, #ddd 50%, #ccc 70%, #fff 80%, #777 95%);
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-weight: 700;
   font-style: normal;
 }
@@ -304,8 +359,19 @@ main {
   font-weight: 700;
   font-style: normal;
 }
+.mordhau header .mobileNav #myLinks .active {
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(45deg, #303030 5%, #fff 10%, #ccc 30%, #ddd 50%, #ccc 70%, #fff 80%, #303030 95%);
+  filter: sepia() saturate(1500%) hue-rotate(-5deg);
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "UnifrakturCook", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
 /*factorio*/
-.factorio h1, .factorio p, .factorio a :not(.active){
+.factorio h1, .factorio p, .factorio a :not(.active, .hamburger){
   color: transparent; 
   background: linear-gradient(
   45deg, 
@@ -320,6 +386,23 @@ main {
   background-clip: text;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-family: "factorio", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.factorio .hamburger{
+  color: transparent; 
+  background: linear-gradient(
+  45deg, 
+  #4C2700 5%,   
+  #CC5500 15%,  
+  #E37300 40%,  
+  #FFB000 55%,  
+  #E37300 70%,  
+  #CC5500 85%,  
+  #4C2700 95%
+);
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-weight: 700;
   font-style: normal;
 }
@@ -349,7 +432,7 @@ main {
   animation: spinReverse 2s linear infinite;
 }
 
-.factorio header nav a:not(.active){
+.factorio header nav a:not(.active), .factorio h2 {
   color: transparent; 
   text-decoration: underline;
   background: linear-gradient(
@@ -387,9 +470,66 @@ main {
   font-weight: 700;
   font-style: normal;
 }
+.factorio header .mobileNav #myLinks a:not(.active){
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  180deg, 
+  #4C2700 5%,   
+  #CC5500 15%,  
+  #E37300 40%,  
+  #FFB000 55%,  
+  #E37300 70%,  
+  #CC5500 85%,  
+  #4C2700 95%
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "factorio", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.factorio header nav .active {
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  180deg, 
+  #7A4B00 5%,    
+  #C28E00 15%,   
+  #FFD700 35%,   
+  #FFF8A5 50%,   
+  #FFD700 65%,   
+  #C28E00 85%,   
+  #7A4B00 95%    
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "factorio", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.factorio header .mobileNav #myLinks .active {
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  180deg, 
+  #7A4B00 5%,    
+  #C28E00 15%,   
+  #FFD700 35%,   
+  #FFF8A5 50%,   
+  #FFD700 65%,   
+  #C28E00 85%,   
+  #7A4B00 95%    
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "factorio", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 /*msc*/
-.msc h1, .msc p, .msc a :not(.active){
+.msc h1, .msc p, .msc a :not(.active, .hamburger), .msc h2{
   color: transparent; 
   text-decoration: underline;
   background: linear-gradient(
@@ -405,6 +545,24 @@ main {
   background-clip: text;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-family: "msc", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.msc .hamburger{
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  135deg, 
+  #2E8B57 5%,    
+  #009900 15%,   
+  #00FF00 40%,   
+  #CCFFCC 50%,   
+  #00FF00 60%,   
+  #009900 85%,   
+  #2E8B57 95%    
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
   font-weight: 700;
   font-style: normal;
 }
@@ -444,7 +602,45 @@ main {
   font-weight: 700;
   font-style: normal;
 }
+.msc header .mobileNav #myLinks a:not(.active){
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  180deg, 
+  #2E8B57 5%,    
+  #009900 15%,   
+  #00FF00 40%,   
+  #CCFFCC 50%,   
+  #00FF00 60%,   
+  #009900 85%,   
+  #2E8B57 95%    
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "msc", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 .msc header nav .active {
+  color: transparent; 
+  text-decoration: underline;
+  background: linear-gradient(
+  180deg, 
+  #4D9969 5%,    
+  #00CC00 15%,   
+  #33FF33 35%,   
+  #FFFFFF 50%,   
+  #33FF33 65%,   
+  #00CC00 85%,   
+  #4D9969 95%    
+  );
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); 
+  font-family: "msc", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.msc header .mobileNav #myLinks .active {
   color: transparent; 
   text-decoration: underline;
   background: linear-gradient(
@@ -482,11 +678,20 @@ main {
 }
 
 @media screen and (max-width: 800px) {
+  nav {
+    display: none;
+  }
+  .mobileNav {
+    display: flex;
+  }
   .game {
     flex-direction: column;
   }
   .container {
     flex-direction: column;
+  }
+  div img + h1 {
+    display: none;
   }
   nav {
     flex-direction: column;
